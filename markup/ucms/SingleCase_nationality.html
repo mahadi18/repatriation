@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>Natinality Identification</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <section id="container" class="">
+        <!--header start-->
+        <header class="header purple-bg">
+            <div class="sidebar-toggle-box">
+                <div data-original-title="Toggle Navigation" data-placement="right" class="fa fa-bars tooltips"></div>
+            </div>
+            <!--logo start-->
+            <a href="Dashboard.html" class="logo">IUCMS :: Integrated Uniform Case Management System</a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+                    <!-- notification dropdown start-->
+                    <li id="header_notification_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="badge bg-important">2</span>
+                        </a>
+                        <ul class="dropdown-menu extended notification">
+                            <div class="notify-arrow notify-arrow-yellow"></div>
+                            <li>
+                                <p class="yellow">You have 2 new notifications</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-warning"><i class="fa fa-bell"></i></span>
+                                    NGO X has assigned you to a new case.
+                                    <span class="small italic">1 Hours</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-success"><i class="fa fa-bell"></i></span>
+                                    NGO Y has accepted your case assignment request.
+                                    <span class="small italic">1 Hours</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">See all notifications</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- notification dropdown end -->
+                </ul>
+            </div>
+            <div class="top-nav ">
+                <ul class="nav pull-right top-menu">
+                    <li>
+                        <input type="text" class="form-control search" placeholder="Search">
+                    </li>
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="" src="img/default_user_small.jpg">
+                            <span class="username">Sankalita Shome</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                            <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li>
+                            <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="main_menu">
+                    <li>
+                        <a href="Dashboard.html"><i class="fa fa-dashboard"></i><span class="visible-xs"></span></a>
+                    </li>
+                    <li>
+                        <a href="MultipleCase_Search.html"><i class="fa fa-list"></i><span></span></a>
+                    </li>
+
+                    <li>
+                        <a href="SingleCase_Profile.html"><i class="fa fa-user"></i><span></span></a>
+                    </li>
+
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+            <div id="sidebar_activities" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <div id="activity-menu-content">
+                    <h4>ACTIVITIES</h4>
+                    <ul class="sidebar-menu" id="nav-accordion">
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+
+                                <span>Intake</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="SingleCase_Intake.html">Initiate UCMS Case</a></li>
+                                <li><a href="#">File FIR </a></li>
+                                <li><a href="#">Court Jurisdiction</a></li>
+                                <li><a href="#">Shelter Home Transfer</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>Nationality Identification </span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="SingleCase_Nationality.html">Nationality Identification </a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>Case Assignment </span>
+                            </a>
+                            <ul class="sub">
+
+                                <li><a href="SingleCase_Assign.html">Case Assignment to NGO </a></li>
+                                <li><a href="SingleCase_Request.html">Accept case assignment </a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>NGO HIR</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Conduct NGO HIR </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>Rep. order at Destination</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Initiation repatriation order</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>Verification / State HIR</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Application to MoHA </a></li>
+                                <li><a href="#">Initiate State verification/State HIR </a></li>
+                                <li><a href="#">Forward application to SB HQ </a></li>
+                                <li><a href="#">Forward application to DSB </a></li>
+                                <li><a href="#">Forward application to Local Police, BD </a></li>
+                                <li><a href="#">Conduct Nationality verification</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>Rep. order at Source</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Initiate Repatriation order</a> </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>Travel permit</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Issue Travel permit </a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>NOC</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Request for FRO Clearance</a></li>
+                                <li><a href="#">Request NOC from Police, for FRO Clearance</a></li>
+                                <li><a href="#">Issue Police NOC</a></li>
+                                <li><a href="#">Issue FRO Clearance </a></li>
+                                <li><a href="#">Request for State NOC</a></li>
+                                <li><a href="#">Issue State NOC </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>Repatriation at border</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Request for police escort towards border</a></li>
+                                <li><a href="#">Confirm date of escort </a></li>
+                                <li><a href="#">Inform repatriation date to NGO BD</a></li>
+                                <li><a href="#">File GD at BD Police</a></li>
+                                <li><a href="#">Victim Handover to NGO BD</a></li>
+                                <li><a href="#">Victim Handover from NGO, IN </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>Transfer to Shelter Home</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Receive victim at BD Shelter home </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper site-min-height">
+                <!-- page start-->
+                <div class="row">
+                    <div class="col-xs-8 col-sm-9 col-md-9 col-lg-10">
+                        <h3 class="page-title">Initiate New Case</h3>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
+                        <img class="logo-image" src="img/mca.png">
+                    </div>
+                </div>
+                <ol class="breadcrumb">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Cases</a></li>
+                    <li class="active">Nationality Identification</li>
+                </ol>
+                <form class="form-horizontal">
+                    <section class="panel">
+                        <header class="panel-heading">Nationality Identification</header>
+                        <section class="panel-body">
+
+                            <fieldset>
+
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="select01">Nationality</label>
+                                    <div class="col-sm-10">
+                                        <select id="select01" class="chzn-select form-control">
+                                            <option>Bangladeshi</option>
+                                            <option>Nepali</option>
+                                            <option>Indian</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="focusedInput">Victims Address</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" type="text" value="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="select01">Division</label>
+                                    <div class="col-sm-10">
+                                        <select id="select01" class="chzn-select form-control">
+                                            <option>Dhaka</option>
+                                            <option>Chittagong</option>
+                                            <option>Rajshahi</option>
+                                            <option>Khulna</option>
+                                            <option>Sylhet</option>
+                                            <option>Barisal</option>
+                                            <option>Rangpur</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="focusedInput">District</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" type="text" value="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="focusedInput">Post Office</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" type="text" value="">
+                                    </div>
+                                </div>
+
+
+
+                            </fieldset>
+
+                        </section>
+                        <footer class="panel-footer">
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-info">Save changes</button>
+                                    <button type="submit" class="btn btn-primary">Complete</button>
+                                    <button type="reset" class="btn">Cancel</button>
+                                </div>
+
+                            </div>
+                        </footer>
+                    </section>
+                </form>
+                <!-- page end-->
+            </section>
+        </section>
+        <!--main content end-->
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                2015 &copy; Missing Child Alert (MCA).
+                <a href="#" class="go-top">
+                    <i class="fa fa-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
+    </section>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="js/respond.min.js"></script>
+    <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+
+</body>
+</html>

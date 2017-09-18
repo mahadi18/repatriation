@@ -1,0 +1,408 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>Case Assignment</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .pro-pic {
+            background: #c0c0c0 !important;
+        }
+
+        .bio-row {
+            width: 100%;
+        }
+
+        .red {
+            color: #fa8072;
+        }
+    </style>
+
+</head>
+<body>
+    <section id="container" class="">
+        <!--header start-->
+        <header class="header purple-bg">
+            <div class="sidebar-toggle-box">
+                <div data-original-title="Toggle Navigation" data-placement="right" class="fa fa-bars tooltips"></div>
+            </div>
+            <!--logo start-->
+            <a href="Dashboard.html" class="logo">IUCMS :: Integrated Uniform Case Management System</a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+                    <!-- notification dropdown start-->
+                    <li id="header_notification_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="badge bg-important">2</span>
+                        </a>
+                        <ul class="dropdown-menu extended notification">
+                            <div class="notify-arrow notify-arrow-yellow"></div>
+                            <li>
+                                <p class="yellow">You have 2 new notifications</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-warning"><i class="fa fa-bell"></i></span>
+                                    NGO X has assigned you to a new case.
+                                    <span class="small italic">1 Hours</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-success"><i class="fa fa-bell"></i></span>
+                                    NGO Y has accepted your case assignment request.
+                                    <span class="small italic">1 Hours</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">See all notifications</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- notification dropdown end -->
+                </ul>
+            </div>
+            <div class="top-nav ">
+                <ul class="nav pull-right top-menu">
+                    <li>
+                        <input type="text" class="form-control search" placeholder="Search">
+                    </li>
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="" src="img/default_user_small.jpg">
+                            <span class="username">Sankalita Shome</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                            <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li>
+                            <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="main_menu">
+                    <li>
+                        <a href="Dashboard.html"><i class="fa fa-dashboard"></i><span class="visible-xs"></span></a>
+                    </li>
+                    <li>
+                        <a href="MultipleCase_Search.html"><i class="fa fa-list"></i><span></span></a>
+                    </li>
+
+                    <li>
+                        <a href="SingleCase_Profile.html"><i class="fa fa-user"></i><span></span></a>
+                    </li>
+
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+            <div id="sidebar_activities" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <div id="activity-menu-content">
+                    <h4>ACTIVITIES</h4>
+                    <ul class="sidebar-menu" id="nav-accordion">
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+
+                                <span>Intake</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="SingleCase_Intake.html">Initiate UCMS Case</a></li>
+                                <li><a href="#">File FIR </a></li>
+                                <li><a href="#">Court Jurisdiction</a></li>
+                                <li><a href="#">Shelter Home Transfer</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>Nationality Identification </span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Nationality Identification </a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>Case Assignment </span>
+                            </a>
+                            <ul class="sub">
+
+                                <li><a href="SingleCase_Assign.html">Case Assignment to NGO </a></li>
+                                <li><a href="SingleCase_Request.html">Accept case assignment </a></li>
+
+
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>NGO HIR</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Conduct NGO HIR </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>Rep. order at Destination</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Initiation repatriation order</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>Verification / State HIR</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Application to MoHA </a></li>
+                                <li><a href="#">Initiate State verification/State HIR </a></li>
+                                <li><a href="#">Forward application to SB HQ </a></li>
+                                <li><a href="#">Forward application to DSB </a></li>
+                                <li><a href="#">Forward application to Local Police, BD </a></li>
+                                <li><a href="#">Conduct Nationality verification</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>Rep. order at Source</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Initiate Repatriation order</a> </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>Travel permit</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Issue Travel permit </a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>NOC</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Request for FRO Clearance</a></li>
+                                <li><a href="#">Request NOC from Police, for FRO Clearance</a></li>
+                                <li><a href="#">Issue Police NOC</a></li>
+                                <li><a href="#">Issue FRO Clearance </a></li>
+                                <li><a href="#">Request for State NOC</a></li>
+                                <li><a href="#">Issue State NOC </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>Repatriation at border</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Request for police escort towards border</a></li>
+                                <li><a href="#">Confirm date of escort </a></li>
+                                <li><a href="#">Inform repatriation date to NGO BD</a></li>
+                                <li><a href="#">File GD at BD Police</a></li>
+                                <li><a href="#">Victim Handover to NGO BD</a></li>
+                                <li><a href="#">Victim Handover from NGO, IN </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <span>Transfer to Shelter Home</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="#">Receive victim at BD Shelter home </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper site-min-height">
+                <!-- page start-->
+                <div class="row">
+                    <div class="col-lg-3">
+                        <aside class="profile-nav">
+                            <section class="panel">
+                                <div class="user-heading round pro-pic">
+                                    <a href="#">
+                                        <img src="img/default_user.jpg" alt="">
+                                    </a>
+                                    <h1>Bilkis Begum</h1>
+                                    <p>Case ID: IN2014034.BD######</p>
+                                </div>
+
+
+                                <div class="panel-body bio-graph-info">
+                                    <h1>Case Information</h1>
+                                    <div class="row">
+                                        <div class="bio-row">
+                                            <p><span>Name </span>: Bilkis Begum</p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p>
+                                                <span>Nationality </span>: Bangladeshi
+                                            </p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p> <span>Rescue at</span>: India, West Bengal</p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>Date of Birth</span>: 13 July 1983</p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>Date of Rescue</span>: 13 July 2012</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+                        </aside>
+
+
+
+                    </div>
+                    <div class="col-lg-9">
+                        <section class="panel panel-danger">
+                            <header class="panel-heading red">
+                                Send Request
+                            </header>
+                            <div class="panel-body">
+                                <form class="form-inline" role="form">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="">Case Id</label>
+                                        <select class="form-control">
+                                            <option>Right Jessore</option>
+                                            <option>BNWLA</option>
+                                            <option>DAM</option>
+                                        </select>
+                                        <button type="submit" class="btn btn-primary">Send Request</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </section>
+
+                        <section class="panel">
+                            <header class="panel-heading">
+                                Suggested NGOs
+                            </header>
+                            <div class="panel-body">
+                                <table class="table table-striped table-advance table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Organization Name</th>
+                                            <th>No of Cases</th>
+                                            <th>Completed Cases</th>
+                                            <th>no of cases requested by my org</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Right Jessore</td>
+                                            <td>13</td>
+                                            <td>17</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>BNWLA</td>
+                                            <td>13</td>
+                                            <td>17</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>DAM</td>
+                                            <td>33</td>
+                                            <td>17</td>
+                                            <td class="center">2</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </section>
+
+
+                    </div>
+
+                </div>
+                <!-- page end-->
+            </section>
+        </section>
+        <!--main content end-->
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                2015 &copy; Missing Child Alert (MCA).
+                <a href="#" class="go-top">
+                    <i class="fa fa-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
+    </section>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="js/respond.min.js"></script>
+    <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+
+</body>
+</html>

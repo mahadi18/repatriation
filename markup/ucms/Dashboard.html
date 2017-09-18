@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>Dashboard</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/morris.js-0.4.3/morris.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <section id="container" class="">
+        <!--header start-->
+        <header class="header purple-bg">
+            <div class="sidebar-toggle-box">
+                <div data-original-title="Toggle Navigation" data-placement="right" class="fa fa-bars tooltips"></div>
+            </div>
+            <!--logo start-->
+            <a href="Dashboard.html" class="logo">IUCMS :: Integrated Uniform Case Management System</a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+                    <!-- notification dropdown start-->
+                    <li id="header_notification_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="badge bg-important">2</span>
+                        </a>
+                        <ul class="dropdown-menu extended notification">
+                            <div class="notify-arrow notify-arrow-yellow"></div>
+                            <li>
+                                <p class="yellow">You have 2 new notifications</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-warning"><i class="fa fa-bell"></i></span>
+                                    NGO X has assigned you to a new case.
+                                    <span class="small italic">1 Hours</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-success"><i class="fa fa-bell"></i></span>
+                                    NGO Y has accepted your case assignment request.
+                                    <span class="small italic">1 Hours</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">See all notifications</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- notification dropdown end -->
+                </ul>
+            </div>
+            <div class="top-nav ">
+                <ul class="nav pull-right top-menu">
+                    <li>
+                        <input type="text" class="form-control search" placeholder="Search">
+                    </li>
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="" src="img/default_user_small.jpg">
+                            <span class="username">Sankalita Shome</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                            <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li>
+                            <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="main_menu">
+                    <li>
+                        <a href="dashboard.html" title="Dashboard">
+                            <i class="fa fa-dashboard"></i>
+                            <!-- <span class="visible-xs"></span> -->
+                        </a>
+                    </li>
+                    <li>
+                        <a href="MultipleCase_Search.html" title="Cases">
+                            <i class="fa fa-list"></i>
+                            <span></span>
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+            <div id="sidebar_activities" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <div id="activity-menu-content">
+
+                    <ul class="sidebar-menu" id="nav-accordion">
+                        <li>
+                            <a href="SingleCase_Intake.html">
+                                <i class="fa fa-plus"></i>
+                                <span>Create a New Case</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <h4>Dashboard</h4>
+                    <ul class="sidebar-menu" id="nav-accordion">
+                        <li>
+                            <a href="#morris">
+                                <!-- <i class="fa fa-dashboard"></i> -->
+                                <span>Annual Rescue and Repatriation Report</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#morris">
+                                <!-- <i class="fa fa-dashboard"></i> -->
+                                <span>Overview</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#morris">
+                                <!-- <i class="fa fa-dashboard"></i> -->
+                                <span>Activity Status</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper site-min-height">
+                <!-- page start-->
+                <div class="row">
+                    <div class="col-xs-8 col-sm-9 col-md-9 col-lg-10">
+                        <h3 class="page-title">Dashboard</h3>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
+                        <img class="logo-image" src="img/mca.png">
+                    </div>
+                </div>
+                <div class="row state-overview">
+                    <div class="col-lg-3 col-sm-6">
+                        <section class="panel">
+                            <div class="symbol terques">
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <div class="value">
+                                <h1 class="count" data-count="12534">
+                                    0
+                                </h1>
+                                <p>Total</p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <section class="panel">
+                            <div class="symbol red">
+                                <i class="fa fa-tags"></i>
+                            </div>
+                            <div class="value">
+                                <h1 class=" count2" data-count="99">
+                                    0
+                                </h1>
+                                <p>Unassigned</p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <section class="panel">
+                            <div class="symbol yellow">
+                                <i class="fa fa-clock-o"></i>
+                            </div>
+                            <div class="value">
+                                <h1 class=" count3" data-count="534">
+                                    0
+                                </h1>
+                                <p>Live</p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <section class="panel">
+                            <div class="symbol blue">
+                                <i class="fa fa-thumbs-o-up"></i>
+                            </div>
+                            <div class="value">
+                                <h1 class=" count4" data-count="8026">
+                                    0
+                                </h1>
+                                <p>Completed</p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div id="morris">
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    Annual Rescue and Repatriation Report
+                                </header>
+                                <div class="panel-body">
+                                    <div id="hero-area" class="graph"></div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-lg-6">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    Overview
+                                </header>
+                                <div class="panel-body">
+                                    <div id="hero-donut" class="graph"></div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="row section">
+                    <div class="col-lg-12">
+                        <!-- block -->
+                        <section class="panel">
+                            <header class="panel-heading">
+                                Activity Status
+                                <div class="pull-right"><span class="badge badge-warning">View More</span></div>
+                            </header>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                                        <div id="hero-donut-1" style="height: 180px;"></div>
+                                        <div class="chart-bottom-heading">
+                                            <span class="label label-info">Intake</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                                        <div id="hero-donut-2" style="height: 180px;"></div>
+                                        <div class="chart-bottom-heading">
+                                            <span class="label label-info">Nationality Identification</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                                        <div id="hero-donut-3" style="height: 180px;"></div>
+                                        <div class="chart-bottom-heading">
+                                            <span class="label label-info">Case Assignment</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                                        <div id="hero-donut-4" style="height: 180px;"></div>
+                                        <div class="chart-bottom-heading">
+                                            <span class="label label-info">NGO HIR</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                                        <div id="hero-donut-5" style="height: 180px;"></div>
+                                        <div class="chart-bottom-heading">
+                                            <span class="label label-info">Rep. order at Destination</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                                        <div id="hero-donut-6" style="height: 180px;"></div>
+                                        <div class="chart-bottom-heading">
+                                            <span class="label label-info">Repatriation</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+                </div>
+                <!-- page end-->
+            </section>
+        </section>
+        <!--main content end-->
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                2015 &copy; Missing Child Alert (MCA).
+                <a href="#" class="go-top">
+                    <i class="fa fa-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
+    </section>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/morris.js-0.4.3/raphael-min.js" type="text/javascript"></script>
+    <script src="assets/morris.js-0.4.3/morris.min.js" type="text/javascript"></script>
+    <script src="js/respond.min.js"></script>
+    <!-- script for this page only-->
+    <script src="js/morris-script.js"></script>
+    <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+    <script src="js/count.js"></script>
+</body>
+</html>
