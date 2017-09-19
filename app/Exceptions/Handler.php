@@ -12,8 +12,8 @@ class Handler extends ExceptionHandler {
 	 */
 	protected $dontReport = [
 		'Symfony\Component\HttpKernel\Exception\HttpException'
-	];
-
+	];                
+    
 	/**
 	 * Report or log an exception.
 	 *
@@ -36,7 +36,23 @@ class Handler extends ExceptionHandler {
 	 */
 	public function render($request, Exception $e)
 	{
-		if ($this->isHttpException($e))
+		/***** Ripon Add this *****/ 
+                
+//                if($e instanceof \Illuminate\Session\TokenMismatchException){
+//                return redirect()
+//                  ->back()
+//                  ->withInput($request->except('_token'))
+//                  ->withErrors('Oops! Seems you could not submit form for a long time. Please try again');
+//                }                                              
+               
+                /*
+                if ( $e instanceof \Illuminate\Session\TokenMismatchException ) {
+                    return redirect()->route('/');
+                }                
+                */
+                /******* Ripon Add this End *********/
+                
+                if ($this->isHttpException($e))
 		{
 			return $this->renderHttpException($e);
 		}

@@ -20,6 +20,7 @@ class MessageController extends Controller {
 
     public function __construct()
     {
+        $this->middleware('auth');
         $this->middleware('notification', ['except' => ['create','sent', 'sentMessage','showMessage','store', 'index','notifications','notifications','allNotifications']]);
     }
 

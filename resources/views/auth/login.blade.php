@@ -16,9 +16,13 @@
 									<li>{{ $error }}</li>
 								@endforeach
 							</ul>
-						</div>
-					@endif
-
+						</div>					
+                                        @endif
+                                        @if (session('csrf_error'))
+                                            <div class="alert alert-danger">
+                                            {{ session('csrf_error') }}
+                                            </div>                                          
+                                        @endif                                             
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 

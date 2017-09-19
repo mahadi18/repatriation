@@ -278,7 +278,7 @@ ul.sidebar-menu li a:hover i {
 }
 
 .case-dashboard .task-name {
-    background: #1e9d8a none repeat scroll 0 0;
+    background: #1e9d68 none repeat scroll 0 0; /* Ripon change it from 1e9d8a */
     border-bottom: 1px solid #00bf9a;
     color: #fff;
 
@@ -756,7 +756,7 @@ form.assign textarea {
 }
 
 .btn-info,.btn-info:hover, .btn-info:active {
-    background-color: #1E9D8A; border-color: #1E9D8A;
+    background-color: #1e9d68; border-color: #1e9d68;  /* Ripon Change it from #1E9D8A */
 }
 
 .modal-header {
