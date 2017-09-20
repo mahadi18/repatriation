@@ -21,7 +21,7 @@ class AuthController extends Controller {
 	|
 	*/
 
-   protected $redirectTo = '/organization/dashboard';
+   protected $redirectTo = '/dashboard'; /*  Ripon change it from '/organization/dashboard'  */
    // protected $redirectTo = '/dashboard';
 
 	use AuthenticatesAndRegistersUsers;

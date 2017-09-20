@@ -13,6 +13,12 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
+            <?php
+            //echo "<pre>";
+            //print_r($form_fields);
+            //echo "</pre>";
+            //die();
+            ?>
             @if($form_fields->count())
                 <table class="table table-condensed table-striped">
                     <thead>
@@ -31,7 +37,7 @@
                                 <td>{{$form_field->id}}</td>
                                 <td>{{$form_field->title}}</td>
                                 <td>{{$form_field->type}}</td>
-                                <td>{{ $form_field->form->title }}</td>
+                                <td>{{ $form_field->form['title'] }}<!-- Ripon fixed the bug --> </td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('form_fields.show', $form_field->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('form_fields.edit', $form_field->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>

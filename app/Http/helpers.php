@@ -71,9 +71,10 @@ if (!function_exists('LeftNavigation')) {
 
     function ownerLeftNav()
     {
+        /* Ripon change it from  "/organization/dashboard" */
         return '<ul class="sidebar-menu" id="nav-accordion">
 
-                <li><a href="/organization/dashboard">Dashboard</a></li>
+                <li><a href="/dashboard">Dashboard</a></li> 
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <span>Action Points</span>

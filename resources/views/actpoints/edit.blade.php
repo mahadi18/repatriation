@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="page-header">
-        <h1>Actpoints / Edit </h1>
+        <h1>Action Points / Edit </h1>
     </div>
 
 
