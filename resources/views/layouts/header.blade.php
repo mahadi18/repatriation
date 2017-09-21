@@ -86,7 +86,7 @@
             </ul>
         </div>
         <ul class="nav pull-right top-menu">
-            <li class="create-an-intake">
+            <li class="pull-left"> <!-- Ripon remove the class create-an-intake -->
                 {{ header_link()}}
             </li>
             <li>

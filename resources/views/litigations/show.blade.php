@@ -101,19 +101,7 @@
                 $current_task = isset($_GET["sub_task"]) ? $_GET["sub_task"] : $sub_tasks[0]->id;
 
                 ?>
-                <header class="panel-heading tab-bg-dark-navy-green ">
-                    <ul class="nav nav-tabs cases">
-                        <?php
-                        foreach ($sub_tasks as $sub_task) {
-                            ?>
-                            <li class="<?php echo $sub_task->id == $current_task ? 'active' : '' ?>">
-                                <a href="/cases/<?php echo $litigation->id; ?>?tid=<?php echo $parent_task_id; ?>&sub_task=<?php echo $sub_task->id; ?>"><?php echo $sub_task->title ?></a>
-                            </li>
-                        <?php
-                        }
-                        ?>
-                    </ul>
-                </header>
+                
             <?php } ?>
                 <?php
                 //dd($template_task);

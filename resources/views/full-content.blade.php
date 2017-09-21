@@ -120,17 +120,10 @@
 {!! Html::script('js/full-content.js') !!}
 {!! Html::script('js/advanced-form-components.js') !!}
 
-
-
 {!! Html::script('assets/bootstrap-timepicker/js/bootstrap-timepicker.js') !!}
 
 
 
-
-
-
-<!--this page  script only-->
-{!! Html::script('js/advanced-form-components.js') !!}
 
 
 

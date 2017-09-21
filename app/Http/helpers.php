@@ -209,6 +209,9 @@ if (!function_exists('header_link')) {
      */
     function header_link()
     {
+        
+        /* Ripon add inline css in <a> tag */
+        
         $user = \Illuminate\Support\Facades\Auth::user();
         switch ($user->roles[0]->name) {
             case 'contributor':
@@ -217,11 +220,11 @@ if (!function_exists('header_link')) {
                 break;
 
             case 'owner':
-                $link = '<a href="/organizations">Administration</a>';
+                $link = '<a style="font-size:12px; background-color:#E9FFFA; padding:9px 4px !important; border-radius:4;color:#1E9D8A; border:1px solid #1E9D8A;" href="/organizations"><i class="fa fa-cog"></i> Administration</a>';
                 break;
 
             case 'admin':
-                $link = '<a href="/organizations">Administration</a>';
+                $link = '<a style="font-size:12px; background-color:#E9FFFA; padding:9px 4px !important; border-radius:4;color:#1E9D8A; border:1px solid #1E9D8A;" href="/organizations"><i class="fa fa-cog"></i> Administration</a>';
                 break;
         }
         echo $link;
