@@ -128,6 +128,7 @@
                                     <a href="/cases/<?php echo $litigation->id; ?>/case-profile">
                                         <img style="width: 115px; max-height: 150px" alt=""
                                              src="{!! (!empty(get_victim_attachment('Victim Personal Image', $litigation->id)['file_path'])) ? get_victim_attachment('Victim Personal Image', $litigation->id)['file_path'] : '/uploads/-text.png' !!}"/>
+                                    
                                     </a>
                                 </div>
                                 <div class="col-lg-6 col-sm-12">
@@ -146,12 +147,11 @@
                         <div class="col-lg-9">
                             <div class="tasks">
                                 <div class="task repatriation-option">
-                                    <ul>
                             {!! Form::open(['route' => ['save.repatriation', $litigation->id], 'method' => 'post', 'class' => '']) !!}
 
                                 {!! Form::label('rep', 'Repatriation Option', ['class' => 'control-label']) !!}
-                                    <li class="<?php if($litigation->repatriation_option==1) echo "checked" ?>"><input type="radio" id="family-{{$litigation->id}}" onchange="this.form.submit()"  name="repatriation-option" value="1"> <label for="family-{{$litigation->id}}"><div class="circle"></div> Through Family </label></li>
-                                    <li class="<?php if($litigation->repatriation_option==2) echo "checked" ?>"><input type="radio" id="letter-{{$litigation->id}}" onchange="this.form.submit()" name="repatriation-option" value="2">  <label for="letter-{{$litigation->id}}"><div class="circle"></div> Through NGO/GO </label></li>
+                                    <li class="<?php if($litigation->repatriation_option==1) echo "checked" ?>"><input type="radio" id="family-{{$litigation->id}}" onchange="<?php if($status == 'open') { ?> this.form.submit() <?php } ?>"  name="repatriation-option" value="1"> <label for="family-{{$litigation->id}}"><div class="circle"></div> Through Family </label></li>
+                                    <li class="<?php if($litigation->repatriation_option==2) echo "checked" ?>"><input type="radio" id="letter-{{$litigation->id}}" onchange="<?php if($status == 'open') { ?> this.form.submit() <?php } ?>" name="repatriation-option" value="2">  <label for="letter-{{$litigation->id}}"><div class="circle"></div> Through NGO/GO </label></li>
 
                             {!! Form::close() !!}
                                     </ul>
@@ -181,21 +181,25 @@
                                         //$active_class = ($task->task_status_id==$task_status->id) ? 'active' : '';
                                         //echo $task->id;
                                         ?>
+                                        <!-- start of a step -->
                                         <div
                                             class="status <?php echo strtolower($task->status) . ' ' . $active_class ?>">
                                             <p><?php
                                                 $date = new DateTime($task->updated_at);
                                                 echo $date->format('jS M \'y'); ?></p>
 
-                                            <p class="t_title"><a
-                                                    href="<?php echo '/cases/' . $litigation->id . '?tid=' . $task->id; ?>"><?php echo $task->title; ?></a>
+                                            <p class="t_title">@if($status=='open')<a
+                                                    href="<?php echo '/cases/' . $litigation->id . '?tid=' . $task->id; ?>"><?php echo $task->title; ?></a>@endif
+                                                    @if($status=='closed')
+                                                    <b><?php echo $task->title; ?></b>
+                                                    @endif
                                             </p>
 
                                             <p><?php echo $task->updator_organization; ?></p>
 
 
                                             <?php echo $icon; ?>
-                                        </div>
+                                        </div><!-- end of a step -->
                                     </div>
                                 <?php
                                 }

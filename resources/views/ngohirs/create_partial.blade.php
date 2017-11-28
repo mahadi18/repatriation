@@ -688,6 +688,7 @@
 
                         <div class="row for-female-only">
                             <div class="col-md-6">
+                                @if( $litigation->sex == 'F')
                                 <div class="form-group gender-{{$litigation->sex}}">
                                     {!! Form::label('pregnancy', 'Pregnant:', ['class' => 'col-sm-4 col-lg-4 control-label']) !!}
                                     <div class="col-sm-8">
@@ -695,6 +696,7 @@
                                             <div class="form-group">
                                                 <div class="radio">
                                                     <label>
+                                                        {{--$litigation->sex--}}
                                                         {!! Form::radio('pregnancy', '1', '', ['id' => 'optionsRadios1']) !!}
                                                         Yes
                                                     </label>
@@ -714,6 +716,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endif
                             </div>
 
                             <div class="col-md-4 col-md-offset-2">

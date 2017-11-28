@@ -42,13 +42,13 @@
             <?php } ?>
         </div>
 
-        @if (Session::has('message'))
-        <div class="message success">
-            <div class="alert alert-success">
-                {{Session::get('message')}}
-            </div>
-        </div>
-        @endif
+        {{-- @if (Session::has('message')) --}}
+        <!-- <div class="message success">
+            <div class="alert alert-success"> -->
+                {{-- Session::get('message')  --}}
+            <!-- </div>
+        </div> -->
+        {{-- @endif --}}
 
         @if(!empty($histories))
 

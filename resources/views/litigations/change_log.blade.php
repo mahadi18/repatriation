@@ -14,6 +14,7 @@
 </div>
 <section class="panel">
     <div class="panel-body">
+
 @if(!empty($histories))
     <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
         <thead>
@@ -39,6 +40,8 @@
         ?>
         </tbody>
     </table>
+    @else
+    <h3 style="padding: 100px; margin-left: 300px;">There is no history</h3>
 @endif
         </div>
     </section>

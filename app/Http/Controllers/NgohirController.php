@@ -57,17 +57,20 @@ class NgohirController extends Controller {
 	{
 		$ngohir = new Ngohir();
 
-        $ngohir->litigation_id                          = $id;
-        $ngohir->name_of_interviewer                    = $request->input('name_of_interviewer');
-        $ngohir->place_of_interview                     = $request->input('place_of_interview');
-        $ngohir->date_of_interview                      = $request->has('date_of_interview') ? Carbon::createFromFormat('d-m-Y', $request->input('date_of_interview'), session('user_current_timezone'))->setTimezone('UTC')->toDateString() : null;
-        $ngohir->name_of_informer                       = $request->input('name_of_informer');
-        $ngohir->name_of_the_survivor_at_destination    = $request->input('name_of_the_survivor_at_destination');
-        $ngohir->father_name                            = $request->input('father_name');
-        $ngohir->mother_name                            = $request->input('mother_name');
-        $ngohir->marital_status                         = $request->input('marital_status');
-        $ngohir->spouse_name                            = $request->input('spouse_name');
-        $ngohir->guardian_occupation                    = $request->input('guardian_occupation');
+        $ngohir->litigation_id = $id;
+        $ngohir->name_of_interviewer = $request->input('name_of_interviewer');
+
+        $ngohir->place_of_interview = $request->input('place_of_interview');
+
+        $ngohir->date_of_interview = $request->has('date_of_interview') ? Carbon::createFromFormat('d-m-Y', $request->input('date_of_interview'), session('user_current_timezone'))->setTimezone('UTC')->toDateString() : null;
+
+        $ngohir->name_of_informer = $request->input('name_of_informer');
+        $ngohir->name_of_the_survivor_at_destination = $request->input('name_of_the_survivor_at_destination');
+        $ngohir->father_name = $request->input('father_name');
+        $ngohir->mother_name = $request->input('mother_name');
+        $ngohir->marital_status = $request->input('marital_status');
+        $ngohir->spouse_name  = $request->input('spouse_name');
+        $ngohir->guardian_occupation  = $request->input('guardian_occupation');
         $ngohir->guardian_monthly_income                = $request->input('guardian_monthly_income');
         $ngohir->eye_color                              = $request->input('eye_color');
         $ngohir->hair_color                             = $request->input('hair_color');

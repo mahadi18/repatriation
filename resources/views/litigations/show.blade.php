@@ -23,11 +23,12 @@
                     <a href="/cases/{{$litigation->id}}/case-profile"> <img style="" alt=""
                          src="{!! (!empty(get_victim_attachment('Victim Personal Image', $litigation->id)['file_path'])) ? get_victim_attachment('Victim Personal Image', $litigation->id)['file_path'] : '/uploads/-text.png' !!}"/></a>
                 </div>
+                <div style="margin-left: 75px;">
                 <h4><a style="color: #333333" href="/cases/{{$litigation->id}}/case-profile">{{$litigation->name_during_rescue}}</a></h4>
 
                 <p>Nationality: {{$litigation->country($litigation->nationality)}}</p>
 
-                <p>Country: {{$litigation->country($litigation->country_of_origin)}}</p>
+                <p>Country: {{$litigation->country($litigation->country_of_origin)}}</p></div>
             </div>
             <div class="col-lg-3 case-id">
                 Case ID: {{$litigation->case_id}}
@@ -137,6 +138,8 @@
                             </ul>
                         </div>
                     @endif
+
+                    {{-- $template_task --}}
 
                     <?php
                     //dd($template_task);

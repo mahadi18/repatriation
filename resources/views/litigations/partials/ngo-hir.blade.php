@@ -5,7 +5,7 @@
         {!! Form::open(array('url' => '/cases/'.$litigation->id.'/task/9', 'method' => 'post', 'class' => 'form-horizontal')) !!}
             {!! Form::hidden('status_id', '4') !!}
             {!! Form::submit('Mark as Complete', ['class' => 'btn btn-success']) !!}
-        {!! Form::close() !!}
+        {!! Form::close() !!} 
     </div>
 @else
     <div class="completer print">

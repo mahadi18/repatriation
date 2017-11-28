@@ -17,6 +17,7 @@ use App\Classes\Countries;
 use App\Classes\Usability;
 
 use App\Litigation;
+use App\Ngohir;
 use App\Message;
 use App\Movement;
 use App\ShelterHome;
@@ -440,6 +441,8 @@ class LitigationController extends Controller
         dd( $litigation);
         echo '</pre>';*/
 
+        //$physical = Ngohir::where('litigation_id', '=', $litigation_id);
+
 
             return view('litigations.case_profile', compact('litigation', 'histories'));
 
@@ -449,7 +452,19 @@ class LitigationController extends Controller
     {
         $litigation = Litigation::findOrFail($litigation_id);
         $litigation->attachemnt = Attachment::getAttachemntForLitigation($litigation_id);
-        return view('litigations.full_profile', compact('litigation'));
+        $physical = Ngohir::where('litigation_id', '=', $litigation_id)->first();
+
+        /*echo '<pre>';
+        dd( $physical);
+        echo '</pre>';
+        die;*/
+
+        if($physical != '')
+            return view('litigations.full_profile', compact('litigation', 'physical'));
+        else{
+            $physical = '';
+            return view('litigations.full_profile', compact('litigation', 'physical'));
+        }
 
     }
 

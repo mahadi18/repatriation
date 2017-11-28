@@ -50,7 +50,7 @@
                 </label>
                 <span class="col-lg-9">
                     <!--<img style="" alt="" src="{!! (!empty(get_victim_attachment('Victim Personal Image', $litigation->id)['file_path'])) ? get_victim_attachment('Victim Personal Image', $litigation->id)['file_path'] : '/uploads/-text.png' !!}"/>-->
-                    <div class="profile_photos">
+                    <div class="profile_photos" style="">
                         <?php echo get_attachments_of_victim('Victim Personal Image', $litigation->id); ?>
                     </div>
                 </span>
@@ -195,7 +195,9 @@
                     <div class="row">
                         <label class="col-lg-6">Height</label>
                         <span class="col-lg-6">
-                            4 ft 5 inch
+                            @if($physical != '')
+                                {{ $physical->height_ft_part }} Feet {{ $physical->height_in_part }} Inch
+                            @endif
                         </span>
                     </div>
                     <div class="row">
@@ -210,22 +212,36 @@
                             @endif
                         </span>
                     </div>
+                    @if($litigation->sex === 'F')
                     <div class="row">
                         <label class="col-lg-6">Pregnant</label>
                         <span class="col-lg-6">
-                            {{$litigation->pregnancy}}
+                            @if($litigation->pregnancy == 0 )
+                            NO
+                            @elseif($litigation->pregnancy === 1)
+                            YES
+                            @endif
                         </span>
                     </div>
+                    @endif
                     <div class="row">
                         <label class="col-lg-6">Accompanied by Child</label>
                         <span class="col-lg-6">
-                            N/A
+                            @if($physical != '')
+                                @if( $physical->accompanying_with_survivor == 0 ) NO
+                                @else YES
+                                @endif
+                            @endif
                         </span>
                     </div>
                     <div class="row">
                         <label class="col-lg-6">Substance Abuse</label>
                         <span class="col-lg-6">
-                           N/A
+                            @if( $physical != '' )
+                                @if( $physical->abuse == 0 ) NO
+                                @else YES
+                                @endif
+                            @endif
                         </span>
                     </div>
                 </div>
@@ -234,14 +250,20 @@
                         <h3> Distinguished Features </h3>
                         <div class="row">
                             <label class="col-lg-6">Birth Mark</label>
-                            <span class="col-lg-6">
-                                N/A
+                            <span class="col-lg-6"> 
+                                <!-- problem was here?? -->
+
+                                @if( $physical != '' )
+                                    {{ $physical->birth_mark }}
+                                @endif
                             </span>
                         </div>
                         <div class="row">
                             <label class="col-lg-6">Complexion</label>
                             <span class="col-lg-6">
-                                N/A
+                                @if( $physical != '' )
+                                    {{ $physical->complexion }}
+                                @endif
                             </span>
                         </div>
 

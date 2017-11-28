@@ -2,6 +2,7 @@
 <div class="cbrms-tasks">
 <header class="panel-heading">
     <h1>State HIR</h1>
+    {{-- $information --}}
     <?php if($information['current_task_status']!='Complete') { ?>
         <div class="completer">
             <form class="form-horizontal" action="/cases/{{$litigation->id }}/task/10" method="POST">

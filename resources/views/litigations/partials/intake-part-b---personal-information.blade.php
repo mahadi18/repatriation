@@ -437,10 +437,11 @@
 </div>
 
 <div class="row">
+    @if($litigation->sex == 'F')
     <div class="col-md-2">
         {!! Form::label('pregnancy', 'Pregnant:', ['class' => 'control-label']) !!}
     </div>
-
+{{-- $litigation->sex --}} 
     <div class="col-md-2">
         <div class="form-group">
             <div class="radio">
@@ -462,6 +463,7 @@
             </div>
         </div>
     </div>
+    @endif
 
     <div class="col-md-6"></div>
 </div>

@@ -214,7 +214,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                {!! Form::label('rescued_by', 'Rescued by:', ['class' => 'col-sm-2 col-lg-2 control-label']) !!}
+                                {!! Form::label('rescued_by', 'Rescued by:', ['class' => 'col-sm-2 col-lg-2 control-label'], ['required']) !!}
                                 <div class="col-sm-10">
                                     {!! Form::text('rescued_by', '', ['class' => 'form-control']) !!}
                                     <p class="help-block"><i>Actors involved in rescue operation. i.e. LEAs, NGOs, Civil Society etc.</i></p>
