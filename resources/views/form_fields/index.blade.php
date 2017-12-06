@@ -1,16 +1,24 @@
 @extends('layout')
 
 @section('header')
-    <div class="page-header clearfix">
+    <!-- <div class="page-header clearfix">
         <h1>
             <i class="glyphicon glyphicon-align-justify"></i> FormFields
             <a class="btn btn-success pull-right" href="{{ route('form_fields.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>
         </h1>
 
-    </div>
+    </div> -->
 @endsection
 
 @section('content')
+    <div class="page-header">
+        <h1>FormFields</h1>
+    </div>
+
+    @if(auth()->user()->roles[0]->name!='contributor')
+        <a class="btn btn-success" href="{{ route('form_fields.create') }}">Create</a>
+    @endif
+    
     <div class="row">
         <div class="col-md-12">
             <?php

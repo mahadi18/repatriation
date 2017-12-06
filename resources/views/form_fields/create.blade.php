@@ -9,6 +9,10 @@
 @section('content')
     @include('error')
 
+    <div class="page-header">
+        <h1>FormFields / Create</h1>
+    </div>
+
     <div class="row">
         <div class="col-md-12">
 
@@ -46,7 +50,7 @@
                     </div>
                 <div class="well well-sm">
                     <button type="submit" class="btn btn-primary">Create</button>
-                    <a class="btn btn-link pull-right" href="{{ route('form_fields.index') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
+                    <a class="btn btn-default pull-right" href="{{ route('form_fields.index') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
                 </div>
             </form>
 

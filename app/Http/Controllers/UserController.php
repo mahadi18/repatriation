@@ -10,6 +10,7 @@ use App\Organization;
 use App\Role;
 use Illuminate\Http\Request;
 use App\Classes\Usability;
+use Hash;
 
 class UserController extends Controller {
 
@@ -58,6 +59,14 @@ class UserController extends Controller {
     {
 
         $user = new User();
+
+        $this->validate($request, [
+
+        	'name' => 'required',
+        	'email' => 'required|email',
+        	'password' => 'required|confirmed',
+        	'organization_id' => 'required|confirmed',
+        ]);
 
         $user->name = $request->input("name");
         $user->email = $request->input("email");
@@ -116,6 +125,21 @@ class UserController extends Controller {
 	public function update(Request $request, $id)
 	{
         $user = User::findOrFail($id);
+
+        if (!Hash::check($request->input("old_password"), $user->password))
+		{
+		    return redirect()->route('users.edit')->with('message', 'Old password is not correct!');
+		}
+		
+        
+        $this->validate($request, [
+
+        	'old_password' 	=> 'required',
+        	'password' 	=> 'confirmed',
+        	'email' 	=> 'email',
+        ]);
+
+
         $user->name = $request->input("name") ? $request->input("name") : $user->name;
         $user->email = $request->input("email") ? $request->input("email") : $user->email;
         $user->status = $request->input("status") ? $request->input("status") : $user->status;

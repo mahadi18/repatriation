@@ -28,9 +28,15 @@
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td style="width: 20%">
-                        <?php
+                        @if($user->last_login != 0)
+                            <?php
                             echo \Carbon\Carbon::createFromTimeStamp(strtotime($user->last_login))->diffForHumans()
                         ?>
+                        @else
+                        never
+                        @endif
+
+                        
 
                     </td>
                     <td class="text-right">

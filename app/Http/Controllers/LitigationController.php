@@ -142,8 +142,8 @@ class LitigationController extends Controller
 
         $this->validate($request, [
             'name_during_rescue' => 'required|regex:/^[A-z ]+$/',
-            'gd_number' => 'regex:/^[A-z0-9 ]+$/'
-            'fir_number' => 'regex:/^[A-z0-9 ]+$/'
+            'gd_number' => 'regex:/^[A-z0-9 ]+$/',
+            'fir_number' => 'regex:/^[A-z0-9 ]+$/',
         ]);
 
         $date_of_birth = strtotime($request->input("dob"));

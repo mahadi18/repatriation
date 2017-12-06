@@ -5,6 +5,10 @@
         <h1>Forms</h1>
     </div>
 
+    @if(auth()->user()->roles[0]->name!='contributor')
+        <a class="btn btn-success" href="{{ route('forms.create') }}">Create</a>
+    @endif
+
 
     <div class="row">
         <div class="col-md-12">

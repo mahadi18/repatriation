@@ -63,12 +63,17 @@ class FormController extends Controller {
 	{
 		$form = new Form();
 
+
+
 		$form->title = $request->input("title");
         $form->task_id = $request->input("task_id");
         $form->order = $request->input("order");
         $form->country_id = $request->input("country_id");
 
+        //return $form->title;
+
 		$form->save();
+
 
 		return redirect()->route('forms.index')->with('message', 'Item created successfully.');
 	}
