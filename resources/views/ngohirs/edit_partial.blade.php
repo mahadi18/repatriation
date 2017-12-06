@@ -19,7 +19,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    {!! Form::label('name_of_interviewer', 'Name of Interviewer:', ['class' => 'col-sm-4 col-lg-4 control-label']) !!}
+                                    {!! Form::label('name_of_interviewer', 'Name of Interviewer:', ['class' => 'col-sm-4 col-lg-4 control-label required']) !!}
+                                    <span id="required-star">*</span>
                                     <div class="col-sm-8">
                                         {!! Form::text('name_of_interviewer', $information['ngohir']->name_of_interviewer, ['class' => 'form-control']) !!}
                                     </div>
@@ -29,6 +30,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     {!! Form::label('place_of_interview', 'Place of Interview:', ['class' => 'col-sm-4 col-lg-4 control-label']) !!}
+                                    <span id="required-star">*</span>
                                     <div class="col-sm-8">
                                         {!! Form::text('place_of_interview', $information['ngohir']->place_of_interview, ['class' => 'form-control']) !!}
                                     </div>
@@ -40,6 +42,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     {!! Form::label('date_of_interview', 'Date of Interview:', ['class' => 'col-sm-4 col-lg-4 control-label']) !!}
+                                    <span id="required-star">*</span><br>
                                     <div class="col-sm-7">
                                         <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="{!! date('d-m-Y') !!}}" class="input-append date dpYears" style="width: 235px">
                                             {!! Form::text('date_of_interview', strlen($information['ngohir']->date_of_interview) ? date('d-m-Y', strtotime($information['ngohir']->date_of_interview)) : '', ['size' => '16', 'class' => 'form-control', 'style' => 'width: 235px']) !!}
@@ -54,6 +57,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     {!! Form::label('name_of_informer', 'Name of Informer:', ['class' => 'col-sm-4 col-lg-4 control-label']) !!}
+                                    <span id="required-star">*</span>
                                     <div class="col-sm-8">
                                         {!! Form::text('name_of_informer', $information['ngohir']->name_of_informer, ['class' => 'form-control']) !!}
                                     </div>
@@ -66,6 +70,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     {!! Form::label('survivor_informer_relation', 'Informer - Survivor Relation:', ['class' => 'col-sm-4 col-lg-4 control-label']) !!}
+                                    <span id="required-star">*</span>
                                     <div class="col-sm-8">
                                         {!! Form::text('survivor_informer_relation', $information['ngohir']->survivor_informer_relation, ['class' => 'form-control']) !!}
                                     </div>
@@ -74,6 +79,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     {!! Form::label('done_over_phone', 'HIR Done over Phone:', ['class' => 'col-sm-4 col-lg-4 control-label']) !!}
+
                                     <div class="col-sm-8">
                                         {!! Form::checkbox('done_over_phone', '1', isset($information['ngohir']->done_over_phone) && $information['ngohir']->done_over_phone == '1' ? 1 : 0) !!}
                                     </div>
@@ -138,7 +144,8 @@
                                         <div class="form-group">
                                             {!! Form::label('case_filed_by_parents', 'Case Filed by Parents:', ['class' => 'col-sm-3 col-lg-6 control-label']) !!}
                                             <div class="col-sm-6">
-                                                {!! Form::checkbox('case_filed_by_parents', '1', isset($information['ngohir']->case_filed_by_parents) && $information['ngohir']->case_filed_by_parents == '1' ? 1 : 0, ['class' => 'case_filed']) !!}
+                                                {!! Form::checkbox('case_filed_by_parents', '1', isset($information['ngohir']->case_filed_by_parents)
+                                                && $information['ngohir']->case_filed_by_parents == '1' ? 1 : 0, ['class' => 'case_filed']) !!}
 
                                             </div>
                                         </div>

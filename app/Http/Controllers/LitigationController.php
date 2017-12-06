@@ -135,8 +135,24 @@ class LitigationController extends Controller
      */
     public function store(LitigationRequest $request)
     {
+        /*return "store case";
+        die;*/
 
         $litigation = new Litigation();
+
+        $this->validate($request, [
+            'name_during_rescue' => 'required|regex:/^[A-z ]+$/',
+            'gd_number' => 'regex:/^[A-z0-9 ]+$/'
+            'fir_number' => 'regex:/^[A-z0-9 ]+$/'
+        ]);
+
+        $date_of_birth = strtotime($request->input("dob"));
+        $today = strtotime(date('d-m-Y'));
+            
+        if($today < $date_of_birth)
+        {
+            return back()->with('error', 'Date of Interview is invalid!! Please enter a valid date.');;
+        }
 
         $litigation->created_by_id                      = auth()->user()->id;
         $litigation->rescued_from_country               = Country::where('name', 'India')->first()->id;
@@ -270,6 +286,17 @@ class LitigationController extends Controller
     public function update(LitigationRequest $request, $id)
     {
         $litigation = Litigation::findOrFail($id);
+        $this->validate($request, [
+            'name_during_rescue' => 'required|regex:/^[A-z ]+$/',
+        ]);
+
+        $date_of_birth = strtotime($request->input("dob"));
+        $today = strtotime(date('d-m-Y'));
+            
+        if($today < $date_of_birth)
+        {
+            return back()->with('error', 'Date of Interview is invalid!! Please enter a valid date.');;
+        }
 
         $litigation->name_during_rescue                 = $request->input("name_during_rescue");
         $litigation->sex                                = $request->input("sex");
@@ -304,7 +331,20 @@ class LitigationController extends Controller
         $litigation->nationality                        = $request->input("nationality");
         $litigation->country_of_origin                  = $request->input("nationality");
 
-        if(isset($_POST['age_select'])) {
+
+
+
+        if(isset($_POST['age_select'])) 
+        {
+            $dob = strtotime($request->input("dob"));
+            $today = strtotime(date('d-m-Y'));
+            
+            if($today < $dob)
+            {
+                return back()->with('error', 'Date of birth is invalid!! Please enter a valid birth date.');;
+            }
+            
+
             if(strlen($request->input("dob")) > 0) {
                 $litigation->date_of_birth              = date('Y-m-d', strtotime($request->input("dob")));
                 list($litigation->age_year_part, $litigation->age_month_part) = calculate_age($request->input("dob"));
@@ -680,6 +720,21 @@ class LitigationController extends Controller
     {
      // dd($request->hasFile('victim_personal_image_attachment'));
         $litigation = Litigation::findOrFail($id);
+
+        $this->validate($request, [
+            'full_name' => 'required|regex:/^[A-z ]+$/',
+            'nick_name' => 'required|regex:/^[A-z ]+$/',
+            'father_name' => 'required|regex:/^[A-z ]+$/',
+            'mother_name' => 'required|regex:/^[A-z ]+$/',
+        ]);
+
+        $date_of_birth = strtotime($request->input("dob"));
+        $today = strtotime(date('d-m-Y'));
+            
+        if($today < $date_of_birth)
+        {
+            return back()->with('error', 'Date of Interview is invalid!! Please enter a valid date.');;
+        }
 
         $litigation->full_name                  = $request->input("full_name");
         $litigation->nick_name                  = $request->input("nick_name");

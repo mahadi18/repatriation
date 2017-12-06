@@ -68,6 +68,8 @@ class MessageController extends Controller {
 	 */
 	public function store(MessageRequest $request)
 	{
+		//dd($request->all());
+
 		$message = new Message();
 		$message->subject = $request->input("subject");
         $message->body = $request->input("body");

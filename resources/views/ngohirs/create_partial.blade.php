@@ -27,7 +27,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    {!! Form::label('place_of_interview', 'Place of Interview:', ['class' => 'col-sm-4 col-lg-4 control-label']) !!}
+                                    {!! Form::label('place_of_interview', 'Place of Interview:', ['class' => 'col-sm-4 col-lg-4 control-label', 'required']) !!}
                                     <div class="col-sm-8">
                                         {!! Form::text('place_of_interview', '', ['class' => 'form-control']) !!}
                                     </div>
@@ -39,9 +39,10 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     {!! Form::label('date_of_interview', 'Date of Interview:', ['class' => 'col-sm-4 col-lg-4 control-label']) !!}
+                                    <span id="required-star">*</span><br>
                                     <div class="col-sm-7">
                                         <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="{!! date('d-m-Y') !!}}" class="input-append date dpYears" style="width: 235px">
-                                            {!! Form::text('date_of_interview', '', ['size' => '16', 'class' => 'form-control', 'style'=>'width: 235px', 'disabled' => 'disabled']) !!}
+                                            {!! Form::text('date_of_interview','', ['size' => '16', 'class' => 'form-control', 'style' => 'width: 235px']) !!}
                                             <span class="input-group-btn add-on">
                                             {!! Form::button('<i class="fa fa-calendar-plus-o"></i>', ['class' => 'btn btn-success']) !!}
                                         </span>

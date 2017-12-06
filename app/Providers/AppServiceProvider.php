@@ -1,6 +1,7 @@
 <?php namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Form;
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -11,6 +12,10 @@ class AppServiceProvider extends ServiceProvider {
 	 */
     public function boot()
     {
+    	Form::macro('labelWithHTML', function ($name, $html) {
+		    return '<label for="'.$name.'">'.$html.'</label>';
+		});
+
         app('view')->composer(array('home','layout','full-content','case-profile'), function($view)
         {
             $action = app('request')->route()->getAction();

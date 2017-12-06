@@ -9,6 +9,7 @@ use App\Ngohir;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Classes\Usability;
+use ValidateRequests;
 
 class NgohirController extends Controller {
 
@@ -55,7 +56,27 @@ class NgohirController extends Controller {
 	 */
 	public function store(Request $request, $id)
 	{
+        //return "store()";
+        //dd($request->all());
+
 		$ngohir = new Ngohir();
+
+        /*$this->validate($request, [
+
+                'name_of_interviewer' => 'required|regex:/^[A-z ]+$/',
+                'place_of_interview' => 'required|regex:/^[A-z ]+$/',
+                'date_of_interview' => 'required',
+                'name_of_informer' => 'required|regex:/^[A-z ]+$/',
+                'survivor_informer_relation' => 'required|regex:/^[A-z ]+$/',
+        ]);*/
+
+        $date_of_interview = strtotime($request->input("date_of_interview"));
+        $today = strtotime(date('d-m-Y'));
+            
+        if($today < $date_of_interview)
+        {
+            return back()->with('error', 'Date of Interview is invalid!! Please enter a valid date.');;
+        }
 
         $ngohir->litigation_id = $id;
         $ngohir->name_of_interviewer = $request->input('name_of_interviewer');
@@ -65,7 +86,11 @@ class NgohirController extends Controller {
         $ngohir->date_of_interview = $request->has('date_of_interview') ? Carbon::createFromFormat('d-m-Y', $request->input('date_of_interview'), session('user_current_timezone'))->setTimezone('UTC')->toDateString() : null;
 
         $ngohir->name_of_informer = $request->input('name_of_informer');
+
+
         $ngohir->name_of_the_survivor_at_destination = $request->input('name_of_the_survivor_at_destination');
+
+
         $ngohir->father_name = $request->input('father_name');
         $ngohir->mother_name = $request->input('mother_name');
         $ngohir->marital_status = $request->input('marital_status');
@@ -201,8 +226,30 @@ class NgohirController extends Controller {
 	public function update(Request $request, $id)
 	{
 
-        //dd($request->all());
+        //dd($request->all()); /** view: ngohirs/edit_partial ***/
+
 		$ngohir = Ngohir::findOrFail($id);
+
+        //return "update()";
+
+        /*$this->validate($request, [
+
+                'name_of_interviewer' => 'required|regex:/^[A-z ]+$/',
+                'place_of_interview' => 'required|regex:/^[A-z ]+$/',
+                'date_of_interview' => 'required',
+                'name_of_informer' => 'required|regex:/^[A-z ]+$/',
+                'survivor_informer_relation' => 'required|regex:/^[A-z ]+$/',
+
+
+        ]);*/
+
+        $date_of_interview = strtotime($request->input("date_of_interview"));
+        $today = strtotime(date('d-m-Y'));
+            
+        if($today < $date_of_interview)
+        {
+            return back()->with('error', 'Date of Interview is invalid!! Please enter a valid date.');;
+        }
 
 //        $ngohir->litigation_id                          = $id;
         $ngohir->name_of_interviewer                    = $request->has('name_of_interviewer') ? $request->input('name_of_interviewer') : $ngohir->name_of_interviewer;
@@ -278,7 +325,8 @@ class NgohirController extends Controller {
             } else {
                 $survivor_address_title = ['present_address', 'native_address'];
             }
-//dd(count($request->input("address_id")));
+            
+            //dd(count($request->input("address_id")));
             for($i=0;$i<count($request->input("address_id"));$i++) {
 
                 $survivor_address = Address::findOrFail($request->input("address_id")[$i]);
